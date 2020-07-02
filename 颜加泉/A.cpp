@@ -34,14 +34,14 @@ int main() {
 			scanf_s("%d", &p[i]);
 			is[p[i]] = true;
 		}
-		sort(temp.begin(), temp.end());
-		for (int i = 1; i <= n; i++) {
+		sort(temp.begin(), temp.end());//将输入的数组进行排序
+		for (int i = 1; i <= n; i++) {//查看每个元素 在排序后的数组中的位置，
 			int pos1 = lower_bound(temp.begin(), temp.end(),a[i])-temp.begin();
 			int pos2 = upper_bound(temp.begin(), temp.end(), a[i]) - temp.begin();
 			int pos = abs(pos1 - i) < abs(pos2 - i) ? pos1 : pos2;
 			if (i < pos) {
-				for (int j = i;j<pos;j++)
-					if (p[j] == false) { printf_s("NO\n"); flag = false; break; }
+				for (int j = i;j<pos;j++)//判断移动过程中是否都是可以swap的
+					if (p[j] == false) { printf_s("NO\n"); flag = false; break; }//不能swap就输出NO
 
 			}
 			else {
@@ -51,7 +51,7 @@ int main() {
 			}
 			if (flag == false)break;
 		}
-		if(flag){
+		if(flag){//如果都可swap 就输出yes
 		printf_s("YES\n");
 
 		}
