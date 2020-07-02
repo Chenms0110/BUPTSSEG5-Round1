@@ -15,13 +15,16 @@ public class A {
             //输入数组
             for(int j=0;j<n;j++){
                 arr[j] = scanner.nextInt();
+                //临时数组用于验证结果
                 arrTemp[j] = arr[j];
             }
+            //排序
             Arrays.sort(arrTemp);
             //输入p序列
             for(int k=0;k<m;k++){
                 parr[k] = scanner.nextInt();
             }
+            //追加：根据p数组中的值，再判断一下原数组中的数值大小，如果前面的大，则两个数交换一下
             for(int r=0;r<parr.length;r++){
                 if(arr[parr[r]-1]>arr[parr[r]]){
                     int temp = arr[parr[r]-1];
@@ -29,7 +32,7 @@ public class A {
                     arr[parr[r]] = temp;
                 }
             }
-
+            //追加：将得到的结果与排好序的临时数组进行比较，确定结果
             for(int j=0;j<n;j++){
                 if(arr[j]==arrTemp[j]){
                     continue;
