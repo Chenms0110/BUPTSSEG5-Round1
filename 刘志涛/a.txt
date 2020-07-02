@@ -1,0 +1,59 @@
+#includebitsstdc++.h
+using namespace std;
+int main()
+{
+	int t,m,n;
+	int a[1000];
+	int b[1000];
+	cint;
+	while(t--)
+	{	int q=0;
+		cinmn;
+		
+		for(int i=1;i=m;i++)
+		{
+			cina[i];
+		 } 
+		 for(int j=1;j=n;j++)
+		 {
+		 	cinb[j];
+		 	if(a[b[j]]a[b[j]+1])
+		 	{
+		 	     int tmp=0;
+		 	     tmp=a[b[j]];
+		     	a[b[j]]=a[b[j]+1];
+		     	a[b[j]+1]=tmp;
+			 }
+		 
+		 }
+		 
+		 for(int i=1;i=n;i++)
+		 {
+		 	if(a[b[i]]a[b[i]+1])
+		 {
+		 	int pm=0;
+		 	pm=a[b[i]];
+		 	a[b[i]]=a[b[i]+1];
+		 	a[b[i]+1]=pm;
+		 }
+		 }
+		 
+		 for(int i=1;im;i++)
+		 {    
+		 	if(a[i]a[i+1])
+		 	{
+		 	     q=1;
+			} 
+		 }
+		 if(q==1)
+		 {
+		 	coutNOendl;
+		 	
+		 }
+		else
+		{
+			coutYESendl;
+		}
+		 
+	}
+ } 
