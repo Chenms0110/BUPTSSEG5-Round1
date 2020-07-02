@@ -6,10 +6,10 @@ using namespace std;
 
 
 int main() {
-	int t; // ������
+	int t; // 用例数
 	while (cin >> t) {
 		for (int round = 0; round < t; round++) {
-			int n, m; // n��a����ĳ��ȣ�m��p����ĳ���
+			int n, m; // n是a数组的长度，m是p数组的长度
 			map<int, int> p, hash;
 			cin >> n >> m;
 			vector<int> a;
@@ -24,8 +24,8 @@ int main() {
 					p[temp] = 1;
 				}
 			}
-			// ����������
-			// ��ʼ����������ð�����򲢼�¼ÿһ�ν���λ�ã������p������бȶԣ�
+			// 完成输入接受
+			// 开始处理（进行冒泡排序并记录每一次交换位置，随后与p数组进行比对）
 			for (int i = 0; i < a.size(); i++) {
 				for (int j = 0; j < a.size() - 1; j++) {
 					if (a[j] > a[j + 1]) {
@@ -38,7 +38,7 @@ int main() {
 					}
 				}
 			}
-			// ð�ݽ�������ʼ�ȶԽ���λ��
+			// 冒泡结束，开始比对交换位置
 			bool flag = false;
 			for (auto i : hash) {
 				if (p.find(i.first) == p.end()) {
@@ -56,3 +56,7 @@ int main() {
 
 	return 0;
 }
+
+/*
+思路：冒泡排序，记录发生交换的位置（map），与输入比较，输出结果。
+*/
